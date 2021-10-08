@@ -32,17 +32,14 @@ public class DVDLibraryView {
         String directorName = io.readString("Please enter director name");
         String studio = io.readString("Please enter studio");
         String userRating = io.readString("Please enter your personal rating/review");
-        String date = io.readString("Please enter release data in DD/MM/YYYY format");
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate releaseDate = LocalDate.parse(date, formatter);
+        LocalDate date = io.readDate("Please enter release date");
 
         DVD currentDVD = new DVD(title);
         currentDVD.setRating(rating);
         currentDVD.setDirectorName(directorName);
         currentDVD.setStudio(studio);
         currentDVD.setUserRating(userRating);
-        currentDVD.setReleaseDate(releaseDate);
+        currentDVD.setReleaseDate(date);
         return currentDVD;
     }
 
@@ -139,17 +136,14 @@ public class DVDLibraryView {
         String directorName = io.readString("Please enter director name");
         String studio = io.readString("Please enter studio");
         String userRating = io.readString("Please enter your personal rating/review");
-        String date = io.readString("Please enter release data in DD/MM/YYYY format");
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate releaseDate = LocalDate.parse(date, formatter);
+        LocalDate date = io.readDate("Please enter release data in DD/MM/YYYY format");
 
         DVD currentDVD = new DVD(title);
         currentDVD.setRating(rating);
         currentDVD.setDirectorName(directorName);
         currentDVD.setStudio(studio);
         currentDVD.setUserRating(userRating);
-        currentDVD.setReleaseDate(releaseDate);
+        currentDVD.setReleaseDate(date);
         return currentDVD;
     }
 

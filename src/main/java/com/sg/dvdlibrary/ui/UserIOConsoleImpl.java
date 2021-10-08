@@ -1,5 +1,8 @@
 package com.sg.dvdlibrary.ui;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class UserIOConsoleImpl implements UserIO {
@@ -110,6 +113,25 @@ public class UserIOConsoleImpl implements UserIO {
             result = readDouble(msgPrompt);
         } while (result < min || result > max);
         return result;
+    }
+
+    @Override
+    public LocalDate readDate(String msgPrompt) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        boolean invalidInput = true;
+        LocalDate releaseDate = null;
+        do{
+            try {
+                String date = readString(msgPrompt);
+                releaseDate = LocalDate.parse(date, formatter);
+                invalidInput = false;
+
+            } catch (DateTimeException e) {
+                this.print("Input error. Please try again.");
+            }
+
+        } while(invalidInput);
+        return releaseDate;
     }
 
 }
