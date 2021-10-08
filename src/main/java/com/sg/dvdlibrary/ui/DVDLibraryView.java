@@ -56,7 +56,7 @@ public class DVDLibraryView {
 
     public void displayDVDList(List<DVD> DVDList) {
         for (DVD currentDVD : DVDList) {
-            String dvdInfo = String.format("#%s : %s %s %s %s %s",
+            String dvdInfo = String.format("Title: %s Release Date: %s Rating: %s  Director: %s Studio: %s  User rating: %s",
                     currentDVD.getTitle(),
                     currentDVD.getReleaseDate(),
                     currentDVD.getRating(),
