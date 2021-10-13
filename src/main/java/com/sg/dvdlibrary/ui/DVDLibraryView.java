@@ -23,7 +23,7 @@ public class DVDLibraryView {
         io.print("5. Display information for a particular DVD");
         io.print("6. Exit");
 
-        return io.readInt("Please select from the above choices.", 1, 6);
+        return io.readInt("Please select from the above choices. (Enter 1-6)", 1, 6);
     }
 
     public DVD getNewDVDInfo() {
@@ -32,7 +32,7 @@ public class DVDLibraryView {
         String directorName = io.readString("Please enter director name");
         String studio = io.readString("Please enter studio");
         String userRating = io.readString("Please enter your personal rating/review");
-        LocalDate date = io.readDate("Please enter release date");
+        LocalDate date = io.readDate("Please enter release date (DD/MM/YYYY format)");
 
         DVD currentDVD = new DVD(title);
         currentDVD.setRating(rating);
@@ -106,11 +106,11 @@ public class DVDLibraryView {
     }
 
     public void displayExitBanner() {
-        io.print("Good Bye!!!");
+        io.print("Goodbye");
     }
 
     public void displayUnknownCommandBanner() {
-        io.print("Unknown Command!!!");
+        io.print("Unknown Command Entered");
     }
 
     public void displayErrorMessage(String errorMsg) {
