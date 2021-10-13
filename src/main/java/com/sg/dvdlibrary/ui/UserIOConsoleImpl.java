@@ -27,13 +27,10 @@ public class UserIOConsoleImpl implements UserIO {
         int num = 0;
         while (invalidInput) {
             try {
-                // print the message msgPrompt (ex: asking for the # of cats!)
                 String stringValue = this.readString(msgPrompt);
-                // Get the input line, and try and parse
-                num = Integer.parseInt(stringValue); // if it's 'bob' it'll break
-                invalidInput = false; // or you can use 'break;'
+                num = Integer.parseInt(stringValue);
+                invalidInput = false;
             } catch (NumberFormatException e) {
-                // If it explodes, it'll go here and do this.
                 this.print("Input error. Please try again.");
             }
         }
